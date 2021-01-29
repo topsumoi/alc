@@ -36,26 +36,33 @@ const left=grams-(burn*time)
   return (
     <form onSubmit={handleSubmit}>
       <h3>Calculating alcohol blood level</h3>
-      <div>
+    <div>
+      <div className="box col-6">
         <label>Weight</label>
         <input type="number" value={weight} onChange={e=>setweight(e.target.value)}></input>
       </div>
-      <div>
+      <div className="box col-6">
         <label>Bottles</label>
         <input type="number" value={bottle} onChange={e=>setbottle(e.target.value)}></input>
       </div>
-      <div>
+      <div className="box col-6">
         <label>Time</label>
         <input type="number" value={time} onChange={e=>setTime(e.target.value)}></input>
       </div>
-      <div>
+      <div className="box col-6">
         <label>Gender</label>
         <label><input type="radio"  name="gender" value="male" defaultChecked onChange={e =>setGender(e.target.value)}></input>Male</label>
         <label><input type="radio"  name="gender" value="female" onChange={e =>setGender(e.target.value)}></input>Female</label>
       </div>
-      <div><output>{blood.toFixed(2)}</output></div>
+      </div>
+      <div className="middle col-12" >
+      <button className="col-6">Calculate</button>
+       <output className="col-6">{blood.toFixed(2)}</output>
+         
         
-        <button>Calculate</button>
+        </div>
+        
+        
     
     </form>
   );
